@@ -4,11 +4,19 @@ services:
     extends:
       file: compose-supmap-users.yml
       service: supmap-users
+    depends_on:
+      supmap-database:
+        condition: service_healthy
 
   supmap-gis:
     extends:
       file: compose-supmap-gis.yml
       service: supmap-gis
+
+  supmap-database:
+    extends:
+      file: compose-database.yml
+      service: supmap-database
 
   supmap-redis:
     extends:
