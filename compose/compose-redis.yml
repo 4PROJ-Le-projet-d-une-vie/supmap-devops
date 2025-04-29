@@ -1,0 +1,7 @@
+services:
+  supmap-redis:
+    image: redis:latest
+    container_name: supmap-redis
+    restart: unless-stopped
+    ports:
+      - ${PORT}:6379
