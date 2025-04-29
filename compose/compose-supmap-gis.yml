@@ -1,0 +1,13 @@
+services:
+  supmap-gis:
+    image: ghcr.io/4proj-le-projet-d-une-vie/supmap-gis:latest
+    container_name: supmap-gis
+    restart: unless-stopped
+    environment:
+      # Variables d'environnement attendues par le package config
+      NOMINATIM_HOST: ${NOMINATIM_HOST}
+      NOMINATIM_PORT: ${NOMINATIM_PORT}
+      VALHALLA_HOST: ${VALHALLA_HOST}
+      VALHALLA_PORT: ${VALHALLA_PORT}
+    ports:
+      - ${API_PORT}:80
