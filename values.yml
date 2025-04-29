@@ -1,8 +1,0 @@
-supmap-gis:
-  nominatim_host: 127.0.0.1
-  nominatim_port: 8080
-  valhalla_host: 127.0.0.1
-  valhalla_port: 8002
-  api_port: 8085
-supmap-redis:
-  port: 6379

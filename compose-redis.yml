@@ -4,4 +4,4 @@ services:
     container_name: supmap-redis
     restart: unless-stopped
     ports:
-      - ${PORT}:6379
+      - ${REDIS_PORT}:6379

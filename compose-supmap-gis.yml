@@ -10,4 +10,4 @@ services:
       VALHALLA_HOST: ${VALHALLA_HOST}
       VALHALLA_PORT: ${VALHALLA_PORT}
     ports:
-      - ${API_PORT}:80
+      - ${SUPMAP_GIS_PORT}:80
