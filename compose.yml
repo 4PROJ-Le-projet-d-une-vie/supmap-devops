@@ -1,5 +1,10 @@
 services:
 
+  supmap-users:
+    extends:
+      file: compose-supmap-users.yml
+      service: supmap-users
+
   supmap-gis:
     extends:
       file: compose-supmap-gis.yml

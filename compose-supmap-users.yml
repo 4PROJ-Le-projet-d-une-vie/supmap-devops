@@ -1,0 +1,10 @@
+services:
+  supmap-users:
+    image: ghcr.io/4proj-le-projet-d-une-vie/supmap-users:latest
+    container_name: supmap-users
+    restart: unless-stopped
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      DB_URL: ${USERS_DB_URL}
+    ports:
+      - ${SUPMAP_USERS_PORT}:80
