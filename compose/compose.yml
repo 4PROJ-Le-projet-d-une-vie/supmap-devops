@@ -1,0 +1,11 @@
+services:
+
+  supmap-gis:
+    extends:
+      file: compose-supmap-gis.yml
+      service: supmap-gis
+
+  supmap-redis:
+    extends:
+      file: compose-redis.yml
+      service: supmap-redis
