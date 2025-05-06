@@ -7,6 +7,13 @@ services:
     depends_on:
       supmap-database:
         condition: service_healthy
+  supmap-incidents:
+    extends:
+      file: compose-supmap-incidents.yml
+      service: supmap-incidents
+    depends_on:
+      supmap-users:
+        condition: service_healthy
 
   supmap-pbf-downloader:
     image: alpine:latest

@@ -1,0 +1,10 @@
+services:
+  supmap-incidents:
+    image: ghcr.io/4proj-le-projet-d-une-vie/supmap-incidents:latest
+    container_name: supmap-incidents
+    restart: unless-stopped
+    environment:
+      DB_URL: ${USERS_DB_URL}
+      USERS_BASE_URL: ${USERS_BASE_URL}
+    ports:
+      - ${SUPMAP_INCIDENTS_PORT}:80
