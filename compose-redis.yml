@@ -5,3 +5,14 @@ services:
     restart: unless-stopped
     ports:
       - ${REDIS_PORT}:6379
+
+  supmap-redis-gui:
+    image: redislabs/redisinsight:latest
+    container_name: supmap-redis-gui
+    restart: unless-stopped
+    ports:
+      - "5540:5540"
+    environment:
+      RI_REDIS_HOST: supmap-redis
+      RI_REDIS_PORT: 6379
+      RI_REDIS_ALIAS: Supmap Redis

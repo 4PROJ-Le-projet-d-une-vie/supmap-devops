@@ -102,6 +102,11 @@ services:
       file: compose-redis.yml
       service: supmap-redis
 
+  supmap-redis-gui:
+    extends:
+      file: compose-redis.yml
+      service: supmap-redis-gui
+
 volumes:
   supmap-osm-data:
   supmap-valhalla-data:
