@@ -15,6 +15,14 @@ services:
       supmap-users:
         condition: service_healthy
 
+  supmap-navigation:
+    extends:
+      file: compose-supmap-navigation.yml
+      service: supmap-navigation
+    depends_on:
+      supmap-redis:
+        condition: service_healthy
+
   supmap-pbf-downloader:
     image: alpine:latest
     container_name: supmap-pbf-downloader

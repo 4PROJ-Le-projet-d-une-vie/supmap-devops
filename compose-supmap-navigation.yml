@@ -1,0 +1,12 @@
+services:
+  supmap-navigation:
+    image: ghcr.io/4proj-le-projet-d-une-vie/supmap-navigation:latest
+    container_name: supmap-navigation
+    restart: unless-stopped
+    environment:
+      REDIS_HOST: ${REDIS_HOST}
+      REDIS_PORT: ${REDIS_PORT}
+      REDIS_INCIDENTS_CHANNEL: ${REDIS_INCIDENTS_CHANNEL}
+      TZ: Europe/Paris
+    ports:
+      - ${SUPMAP_NAVIGATION_PORT}:80
