@@ -4,10 +4,11 @@ services:
     container_name: supmap-gis
     restart: unless-stopped
     environment:
-      # Variables d'environnement attendues par le package config
       NOMINATIM_HOST: ${NOMINATIM_HOST}
       NOMINATIM_PORT: 8080
       VALHALLA_HOST: ${VALHALLA_HOST}
       VALHALLA_PORT: 8002
+      SUPMAP_INCIDENTS_HOST: ${SUPMAP_INCIDENTS_HOST}
+      SUPMAP_INCIDENTS_PORT: 8081
     ports:
       - ${SUPMAP_GIS_PORT}:80
