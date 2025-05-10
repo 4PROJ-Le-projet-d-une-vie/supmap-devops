@@ -1,5 +1,10 @@
 services:
 
+  supmap-gateway:
+    extends:
+      file: compose-gateway.yml
+      service: supmap-gateway
+
   supmap-users:
     extends:
       file: compose-supmap-users.yml

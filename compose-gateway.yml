@@ -1,0 +1,16 @@
+services:
+  supmap-gateway:
+    image: ghcr.io/4proj-le-projet-d-une-vie/supmap-gateway:latest
+    container_name: supmap-gateway
+    restart: unless-stopped
+    environment:
+      SUPMAP_USERS_HOST: ${SUPMAP_USERS_HOST}
+      SUPMAP_USERS_PORT: ${SUPMAP_USERS_PORT}
+      SUPMAP_INCIDENTS_HOST: ${SUPMAP_INCIDENTS_HOST}
+      SUPMAP_INCIDENTS_PORT: ${SUPMAP_INCIDENTS_PORT}
+      SUPMAP_GIS_HOST: ${SUPMAP_GIS_HOST}
+      SUPMAP_GIS_PORT: ${SUPMAP_GIS_PORT}
+      SUPMAP_NAVIGATION_PORT: ${SUPMAP_NAVIGATION_PORT}
+      SUPMAP_NAVIGATION_HOST: ${SUPMAP_NAVIGATION_HOST}
+    ports:
+      - ${SUPMAP_GATEWAY_PORT}:80
