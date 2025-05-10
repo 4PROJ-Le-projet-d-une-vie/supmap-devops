@@ -4,7 +4,7 @@ services:
     container_name: supmap-incidents
     restart: unless-stopped
     environment:
-      DB_URL: ${USERS_DB_URL}
+      DB_URL: ${INCIDENT_DB_URL}
       SUPMAP_USERS_HOST: ${SUPMAP_USERS_HOST}
       SUPMAP_USERS_PORT: ${CONTAINER_INTERNAL_PORT}
       REDIS_HOST: ${REDIS_HOST}

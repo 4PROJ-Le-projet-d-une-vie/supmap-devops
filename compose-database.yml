@@ -13,3 +13,5 @@ services:
       timeout: 30s
     ports:
       - ${POSTGRES_PORT}:5432
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
