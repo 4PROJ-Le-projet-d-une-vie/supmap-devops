@@ -17,6 +17,7 @@ services:
     depends_on:
       supmap-database:
         condition: service_healthy
+
   supmap-incidents:
     extends:
       file: compose-supmap-incidents.yml
@@ -31,6 +32,10 @@ services:
       service: supmap-navigation
     depends_on:
       supmap-redis:
+        condition: service_healthy
+      supmap-valhalla:
+        condition: service_healthy
+      supmap-nominatim:
         condition: service_healthy
 
   supmap-pbf-downloader:
@@ -109,6 +114,11 @@ services:
     extends:
       file: compose-supmap-gis.yml
       service: supmap-gis
+    depends_on:
+      supmap-valhalla:
+        condition: service_healthy
+      supmap-nominatim:
+        condition: service_healthy
 
   supmap-database:
     extends:
