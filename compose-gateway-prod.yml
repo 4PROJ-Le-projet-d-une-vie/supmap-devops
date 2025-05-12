@@ -16,3 +16,6 @@ services:
       SUPMAP_NAVIGATION_PORT: ${SUPMAP_NAVIGATION_PORT}
     ports:
       - ${SUPMAP_GATEWAY_PORT}:80
+    volumes:
+      - ./${CERT_FILE}:/app/${KEY_FILE}:ro
+      - ./${KEY_FILE}:/app/${KEY_FILE}:ro
