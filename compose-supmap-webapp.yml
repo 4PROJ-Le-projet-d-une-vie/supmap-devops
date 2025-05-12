@@ -2,6 +2,7 @@ services:
   supmap-webapp:
     image: ghcr.io/4proj-le-projet-d-une-vie/supmap-webapp:latest
     container_name: supmap-webapp
+    restart: unless-stopped
     ports:
       - "8080:80"
     volumes:
